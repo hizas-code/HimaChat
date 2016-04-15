@@ -3,6 +3,7 @@ package com.motion.lab.himachat;
 import android.content.Intent;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.support.v7.widget.RecyclerView;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.widget.LinearLayout;
@@ -10,6 +11,7 @@ import android.widget.LinearLayout;
 import com.motion.lab.himachat.network.NetHelper;
 
 public class HomeActivity extends AppCompatActivity {
+    RecyclerView recyclerView;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -24,6 +26,8 @@ public class HomeActivity extends AppCompatActivity {
             // finish supaya tidak bisa di back ke halaman home
             finish();
         }
+
+        recyclerView = (RecyclerView)findViewById(R.id.chatPanel);
     }
 
     @Override

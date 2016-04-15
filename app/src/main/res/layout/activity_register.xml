@@ -80,7 +80,7 @@
         android:layout_height="wrap_content"
         android:orientation="horizontal">
         <CheckBox
-            android:id="@+id/eula_box"
+            android:id="@+id/terms_box"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="@string/terms_short"/>

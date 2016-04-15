@@ -15,6 +15,7 @@
         android:focusableInTouchMode="true"
         android:layout_width="0px"
         android:layout_height="0px"/>
+    <!--tombol register-->
     <Button
         android:id="@+id/register_button"
         android:layout_centerHorizontal="true"
@@ -23,6 +24,7 @@
         android:layout_height="wrap_content"
         style="@style/Base.Widget.AppCompat.Button.Borderless.Colored"
         android:text="@string/register" />
+    <!--Tombol sign in-->
     <Button
         android:id="@+id/sign_in_button"
         android:background="@color/colorPrimaryDark"
@@ -39,6 +41,7 @@
         android:lines="1"
         android:maxEms="10"
         android:text="@string/sign_in"/>
+    <!--Menampung input password-->
     <EditText
         android:id="@+id/password_text"
         android:layout_centerHorizontal="true"
@@ -50,6 +53,7 @@
         android:lines="1"
         android:maxEms="10"
         android:hint="@string/password" />
+    <!--Menampung input username-->
     <EditText
         android:id="@+id/username_text"
         android:layout_centerHorizontal="true"

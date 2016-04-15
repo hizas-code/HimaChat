@@ -5,7 +5,8 @@
     <string name="encyclopedia">Encyclopedia</string>
     <string name="description">This menu contain all neuro knowledge</string>
 
-    <string name="domain_url">http://10.0.2.2:3000/api</string>
+    <!--address server-->
+    <string name="domain_url">http://10.5.13.155:3000/api</string>
 
     <!--GUI-->
     <string name="register"><u>Register</u></string>

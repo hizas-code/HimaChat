@@ -21,7 +21,7 @@ public class NetHelper {
 
     public static void doLogin(Context context, String username, String password,
                                AsyncHttpResponseHandler eventListener) {
-        // login url
+        // login url.. lak
         String url = context.getString(R.string.domain_url)+ "/login";
 
         // request
@@ -31,6 +31,7 @@ public class NetHelper {
 
         Log.i("Nethelper", url);
 
+        // methode post menggunakan library loopj
         client.post(url, params, eventListener);
     }
 
@@ -48,6 +49,7 @@ public class NetHelper {
 
         Log.i("Nethelper", url);
 
+        // methode post menggunakan library loopj
         client.post(url, params, eventListener);
     }
 }

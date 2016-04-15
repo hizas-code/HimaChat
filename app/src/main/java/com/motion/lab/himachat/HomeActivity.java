@@ -16,21 +16,19 @@ public class HomeActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_home);
 
+        // cek apakah sudah login
+        // tanda seru (!) menandakan not, jadi jika belum login
         if (!AppConfig.isLogin(HomeActivity.this)){
             Intent move = new Intent(this, LoginActivity.class);
             startActivity(move);
+            // finish supaya tidak bisa di back ke halaman home
             finish();
         }
-
-//        LinearLayout parent = (LinearLayout)findViewById(R.id.parent_view);
-//
-//        for (int i = 0; i < 4; i++) {
-//            getLayoutInflater().inflate(R.layout.item_menu, parent);
-//        }
     }
 
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {
+        // bikin menu
         getMenuInflater().inflate(R.menu.menu_home, menu);
         return super.onCreateOptionsMenu(menu);
     }
@@ -43,11 +41,15 @@ public class HomeActivity extends AppCompatActivity {
         int id = item.getItemId();
 
         //noinspection SimplifiableIfStatement
+
+        // kalau menu sign out ditekan
         if (id == R.id.action_sign_out) {
             // Sign out
             Intent move = new Intent(this, LoginActivity.class);
             startActivity(move);
             AppConfig.saveLogin(HomeActivity.this, NetHelper.SINGED_OUT);
+            AppConfig.saveAccount(HomeActivity.this, "", "");
+            // finish supaya tidak bisa di back ke halaman home
             finish();
         }
         return super.onOptionsItemSelected(item);

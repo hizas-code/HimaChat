@@ -3,8 +3,10 @@
     package="com.motion.lab.himachat">
 
     <!--Internet Permission-->
+    <uses-permission android:name="android.permission.WAKE_LOCK" />
     <uses-permission android:name="android.permission.INTERNET" />
     <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
+    <uses-permission android:name="android.permission.READ_PHONE_STATE" />
 
     <application
         android:allowBackup="true"
@@ -13,11 +15,7 @@
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
         <activity android:name="com.motion.lab.himachat.HomeActivity">
-            <intent-filter>
-                <action android:name="android.intent.action.MAIN" />
 
-                <category android:name="android.intent.category.LAUNCHER" />
-            </intent-filter>
         </activity>
         <activity
             android:name="com.motion.lab.himachat.LoginActivity"
@@ -25,7 +23,22 @@
         <activity
             android:name="com.motion.lab.himachat.RegisterActivity"
             android:label="@string/register_page" />
-        <activity android:name="com.motion.lab.himachat.TermsActivity" android:label="@string/terms_page"></activity>
+        <activity
+            android:name="com.motion.lab.himachat.TermsActivity"
+            android:label="@string/terms_page"></activity>
+        <activity
+            android:name="com.motion.lab.himachat.MainActivity"
+            android:theme="@style/AppThemeNoAction">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+        <activity
+            android:name="com.motion.lab.himachat.GroupChat"
+            android:theme="@style/AppThemeNoAction" />
+
     </application>
 
 </manifest>

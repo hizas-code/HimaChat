@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical" android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:weightSum="1">
+
+    <ImageView
+        android:layout_width="40dp"
+        android:layout_height="40dp"
+        android:id="@+id/imageRowUser"
+        android:layout_weight="0.17" />
+
+    <TextView
+        android:layout_width="112dp"
+        android:layout_height="wrap_content"
+        android:textAppearance="?android:attr/textAppearanceSmall"
+        android:text="UserChat"
+        android:id="@+id/userRowUser"
+        android:layout_gravity="center_horizontal"
+        android:layout_weight="0.05"
+        android:layout_alignParentTop="true"
+        android:layout_toRightOf="@+id/imageRowUser"
+        android:layout_toEndOf="@+id/imageRowUser"
+        android:textSize="10dp" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textAppearance="?android:attr/textAppearanceMedium"
+        android:text="ChatText"
+        android:id="@+id/chatRowUser"
+        android:layout_below="@+id/userRowUser"
+        android:layout_toRightOf="@+id/imageRowUser" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textAppearance="?android:attr/textAppearanceSmall"
+        android:text="time"
+        android:id="@+id/timeRowUser"
+        android:layout_alignBottom="@+id/chatRowUser"
+        android:layout_toRightOf="@+id/chatRowUser"
+        android:layout_toEndOf="@+id/chatRowUser"
+        android:textSize="6dp" />
+
+</RelativeLayout>

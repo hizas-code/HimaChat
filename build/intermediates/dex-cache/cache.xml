@@ -1,3 +1,110 @@
 <?xml version="1.0" encoding="utf-8"?>
-<items version="2" />
+<items version="2" >
 
+    <item
+        jar="H:\Worked\Project\HimaChat\app\build\intermediates\exploded-aar\com.android.support\support-v4\23.3.0\jars\libs\internal_impl-23.3.0.jar"
+        jumboMode="false"
+        revision="23.0.3"
+        sha1="4da5a4d697d32497c6f85567a5112e62fdfd0676">
+        <dex dex="H:\Worked\Project\HimaChat\app\build\intermediates\pre-dexed\debug\internal_impl-23.3.0_eb51256af149dbb0424406be213c3fdf3e4bcfa2.jar" />
+    </item>
+    <item
+        jar="C:\Users\PERSONAL\.gradle\caches\modules-2\files-2.1\com.loopj.android\android-async-http\1.4.9\386a4339ffe52d5d63e80f9bed8d2b1d1a418249\android-async-http-1.4.9.jar"
+        jumboMode="false"
+        revision="23.0.3"
+        sha1="386a4339ffe52d5d63e80f9bed8d2b1d1a418249">
+        <dex dex="H:\Worked\Project\HimaChat\app\build\intermediates\pre-dexed\debug\android-async-http-1.4.9_e3b23cd75d9cf1ef67067641aaa0cb8167ec1b6f.jar" />
+    </item>
+    <item
+        jar="H:\Worked\Project\HimaChat\app\build\intermediates\exploded-aar\com.android.support\animated-vector-drawable\23.3.0\jars\classes.jar"
+        jumboMode="false"
+        revision="23.0.3"
+        sha1="23be6993826b8fd88bbc8d14928bb3b8960d3d4e">
+        <dex dex="H:\Worked\Project\HimaChat\app\build\intermediates\pre-dexed\debug\com.android.support-animated-vector-drawable-23.3.0_7b0db137fde2c805896b55cd56aa34f21cbb8d3e.jar" />
+    </item>
+    <item
+        jar="C:\Users\PERSONAL\.gradle\caches\modules-2\files-2.1\org.eclipse.paho\org.eclipse.paho.android.service\1.0.2\2d956522c556caeb35148445ecd059ebe67331f6\org.eclipse.paho.android.service-1.0.2.jar"
+        jumboMode="false"
+        revision="23.0.3"
+        sha1="2d956522c556caeb35148445ecd059ebe67331f6">
+        <dex dex="H:\Worked\Project\HimaChat\app\build\intermediates\pre-dexed\debug\org.eclipse.paho.android.service-1.0.2_82d962d941fcbdf89e5b39876e997cd91b50699a.jar" />
+    </item>
+    <item
+        jar="H:\Worked\Project\HimaChat\app\build\intermediates\exploded-aar\com.android.support\design\23.3.0\jars\classes.jar"
+        jumboMode="false"
+        revision="23.0.3"
+        sha1="f0001e71cea6ae432a00021c6f727f5ef0f3d27e">
+        <dex dex="H:\Worked\Project\HimaChat\app\build\intermediates\pre-dexed\debug\com.android.support-design-23.3.0_81aab08c03e767f524d6dcb68862ff830bed6f3c.jar" />
+    </item>
+    <item
+        jar="H:\Worked\Project\HimaChat\app\build\intermediates\exploded-aar\com.android.support\support-vector-drawable\23.3.0\jars\classes.jar"
+        jumboMode="false"
+        revision="23.0.3"
+        sha1="a0b5d60246cd9d4f3f2443611b3b4c25265840b5">
+        <dex dex="H:\Worked\Project\HimaChat\app\build\intermediates\pre-dexed\debug\com.android.support-support-vector-drawable-23.3.0_4c81478f637db589c6885a39c43c87570fe492e9.jar" />
+    </item>
+    <item
+        jar="H:\Worked\Project\HimaChat\app\build\intermediates\exploded-aar\com.android.support\recyclerview-v7\23.3.0\jars\classes.jar"
+        jumboMode="false"
+        revision="23.0.3"
+        sha1="debf30ce0a7560396b6235edef77e447006454c2">
+        <dex dex="H:\Worked\Project\HimaChat\app\build\intermediates\pre-dexed\debug\com.android.support-recyclerview-v7-23.3.0_807f99fc915f217412db017e2109a13d0956dd31.jar" />
+    </item>
+    <item
+        jar="H:\MASTER\DEVELOPMENT\Android\extras\android\m2repository\com\android\support\support-annotations\23.3.0\support-annotations-23.3.0.jar"
+        jumboMode="false"
+        revision="23.0.3"
+        sha1="db7791d75a07fef9844d06236c1c59ba7bf6997c">
+        <dex dex="H:\Worked\Project\HimaChat\app\build\intermediates\pre-dexed\debug\support-annotations-23.3.0_2b98962c298f4c639cb0ab5100c4a5d11342a8a8.jar" />
+    </item>
+    <item
+        jar="H:\Worked\Project\HimaChat\app\build\intermediates\exploded-aar\com.android.support\support-v4\23.3.0\jars\classes.jar"
+        jumboMode="false"
+        revision="23.0.3"
+        sha1="8a034dd16c0dfd75fe86c52c2cd581592acc684a">
+        <dex dex="H:\Worked\Project\HimaChat\app\build\intermediates\pre-dexed\debug\com.android.support-support-v4-23.3.0_f9f76ebed667a23d9a36751b68817e872ad70dac.jar" />
+    </item>
+    <item
+        jar="H:\Worked\Project\HimaChat\app\build\intermediates\exploded-aar\de.hdodenhof\circleimageview\2.0.0\jars\classes.jar"
+        jumboMode="false"
+        revision="23.0.3"
+        sha1="031e8b3ab2df4ab43b1017f84417d7e10dfbb8d2">
+        <dex dex="H:\Worked\Project\HimaChat\app\build\intermediates\pre-dexed\debug\de.hdodenhof-circleimageview-2.0.0_88e0be1d4f506f3fe203a96660f646c5d5f56ffa.jar" />
+    </item>
+    <item
+        jar="C:\Users\PERSONAL\.gradle\caches\modules-2\files-2.1\org.eclipse.paho\org.eclipse.paho.client.mqttv3\1.0.2\11752d3f24d1a9deda4533a7ca18d8496417ceeb\org.eclipse.paho.client.mqttv3-1.0.2.jar"
+        jumboMode="false"
+        revision="23.0.3"
+        sha1="11752d3f24d1a9deda4533a7ca18d8496417ceeb">
+        <dex dex="H:\Worked\Project\HimaChat\app\build\intermediates\pre-dexed\debug\org.eclipse.paho.client.mqttv3-1.0.2_6f2e76fc7249d3331e6fa82ade560c513cb27e44.jar" />
+    </item>
+    <item
+        jar="H:\Worked\Project\HimaChat\app\build\intermediates\exploded-aar\com.android.support\appcompat-v7\23.3.0\jars\classes.jar"
+        jumboMode="false"
+        revision="23.0.3"
+        sha1="1b8e03daaa43fb0a4cd57e378167c2fd70454c1e">
+        <dex dex="H:\Worked\Project\HimaChat\app\build\intermediates\pre-dexed\debug\com.android.support-appcompat-v7-23.3.0_ecb93df8ce069adb83b1edb392a3050fe666c479.jar" />
+    </item>
+    <item
+        jar="H:\Worked\Project\HimaChat\app\libs\mqtt-client-0.4.0.jar"
+        jumboMode="false"
+        revision="23.0.3"
+        sha1="70efcaca7d1c70ad5dc716a124f2861f07fe27bf">
+        <dex dex="H:\Worked\Project\HimaChat\app\build\intermediates\pre-dexed\debug\mqtt-client-0.4.0_c5306368e26bf294f26fd0b32b3a98c328d772b2.jar" />
+    </item>
+    <item
+        jar="C:\Users\PERSONAL\.gradle\caches\modules-2\files-2.1\cz.msebera.android\httpclient\4.3.6\526a9f794eab830eae4f23a62c572878b3f491ab\httpclient-4.3.6.jar"
+        jumboMode="false"
+        revision="23.0.3"
+        sha1="526a9f794eab830eae4f23a62c572878b3f491ab">
+        <dex dex="H:\Worked\Project\HimaChat\app\build\intermediates\pre-dexed\debug\httpclient-4.3.6_6ba2b33387c861ac77fed36ebd77eb57799263b5.jar" />
+    </item>
+    <item
+        jar="H:\Worked\Project\HimaChat\app\build\intermediates\exploded-aar\com.android.support\cardview-v7\23.3.0\jars\classes.jar"
+        jumboMode="false"
+        revision="23.0.3"
+        sha1="82ce13fd19cdfde0e392f03c27edeba8d4333648">
+        <dex dex="H:\Worked\Project\HimaChat\app\build\intermediates\pre-dexed\debug\com.android.support-cardview-v7-23.3.0_79df159c6006fc2e59de2ed41a05a720087f7708.jar" />
+    </item>
+
+</items>

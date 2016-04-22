@@ -3,7 +3,6 @@ package com.motion.lab.himachat;
 import android.content.Intent;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
-import android.support.v7.widget.Toolbar;
 import android.util.Log;
 import android.view.View;
 import android.widget.Button;
@@ -11,34 +10,25 @@ import android.widget.EditText;
 import android.widget.ListView;
 import android.widget.Toast;
 
-import org.eclipse.paho.client.mqttv3.IMqttActionListener;
+
 import org.eclipse.paho.client.mqttv3.IMqttDeliveryToken;
-import org.eclipse.paho.client.mqttv3.IMqttToken;
 import org.eclipse.paho.client.mqttv3.MqttCallback;
-import org.eclipse.paho.client.mqttv3.MqttClient;
-import org.eclipse.paho.client.mqttv3.MqttConnectOptions;
-import org.eclipse.paho.client.mqttv3.MqttException;
 import org.eclipse.paho.client.mqttv3.MqttMessage;
 import org.json.JSONObject;
 
 import java.util.ArrayList;
-
-//import com.example.personal.partchat.R;
 
 public class GroupChat extends AppCompatActivity implements View.OnClickListener, MqttCallback {
     ArrayList<Chat> chats = new ArrayList<>();
     static String username = "rahmatridham";
 
     EditText text;
-    Button send;
+    Button send, sendOtherUser;
 
     ChatViewAdapter chatViewAdapter;
     ListView listView;
 
-    MqttConnectOptions options;
-    MqttClient subscribe, read;
-
-    MqttMessage message;
+    MqttHandler handler;
 
 
     @Override
@@ -50,6 +40,11 @@ public class GroupChat extends AppCompatActivity implements View.OnClickListener
 
         text = (EditText) findViewById(R.id.editText);
         send = (Button) findViewById(R.id.button);
+
+        sendOtherUser = (Button) findViewById(R.id.butOtherUser);
+
+        handler = new MqttHandler(getApplicationContext(),chats,chatViewAdapter, this);
+        handler.connect();
 
         Chat chat1 = new Chat("rahmatridham", "hoihoi", 1);
         chats.add(chat1);
@@ -69,57 +64,46 @@ public class GroupChat extends AppCompatActivity implements View.OnClickListener
         listView.setAdapter(chatViewAdapter);
 
         send.setOnClickListener(this);
-
-        try {
-            options = new MqttConnectOptions();
-            options.setCleanSession(false);
-
-            subscribe = new MqttClient("tcp://localhost:1883", "Sender");
-            read = new MqttClient("tcp://localhost:1883", "Reciever");
-            subscribe.connect(options);
-            read.connect();
-            subscribe.setCallback(this);
-            read.subscribe("HIMACHAT", 2);
-
-        } catch (MqttException e) {
-            e.printStackTrace();
-        }
-
+        sendOtherUser.setOnClickListener(this);
 
     }
 
     @Override
     public void onClick(View v) {
         switch (v.getId()) {
+            //tombol user
             case R.id.button:
                 String messageText = (String) text.getText().toString();
                 text.setText("");
-                if (messageText.equals("bye")) {
-                    try {
-                        read.disconnect();
-                        subscribe.disconnect();
-                        read.close();
-                        subscribe.close();
-                    } catch (MqttException e) {
-                        e.printStackTrace();
-                    }
-                    startActivity(new Intent(this, LoginActivity.class));
-                }
-                Chat chat = new Chat(username, messageText, 1);
+
+//                if (messageText.equals("bye")) {
+//                    handler.disconnect();
+//                    startActivity(new Intent(this, LoginActivity.class));
+//                }
+//
+//                handler.publish(username,messageText,1);
+
+                handler.publish(username, messageText, 0);
+
+                Chat chat = new Chat(GroupChat.username, messageText, 0);
                 chats.add(chat);
-
-                message = new MqttMessage();
-                String messagePayLoad = "{\"username\":\"" + username + "\",\"text\":\"" + messageText + "\",\"sex\":" + 1 + "}";
-
-                message.setPayload((messagePayLoad).getBytes());
-                try {
-                    subscribe.publish("HIMACHAT", message);
-                } catch (MqttException e) {
-                    e.printStackTrace();
-                }
 
                 chatViewAdapter.notifyDataSetChanged();
                 scrollMyListViewToBottom();
+                break;
+
+            //tombol other user
+            case R.id.butOtherUser:
+                String messageTexti = (String) text.getText().toString();
+                text.setText("");
+                Chat chatzi = new Chat("Alif", messageTexti, 1);
+                chats.add(chatzi);
+
+                chatViewAdapter.notifyDataSetChanged();
+                scrollMyListViewToBottom();
+                break;
+
+
         }
     }
 
@@ -136,20 +120,21 @@ public class GroupChat extends AppCompatActivity implements View.OnClickListener
     @Override
     public void connectionLost(Throwable throwable) {
         startActivity(new Intent(this, LoginActivity.class));
-        Toast.makeText(GroupChat.this, "Connection Lost, "+throwable.getMessage(), Toast.LENGTH_SHORT).show();
+        Toast.makeText(this, "Connection Lost, " + throwable.getMessage(), Toast.LENGTH_SHORT).show();
     }
 
     @Override
     public void messageArrived(String s, MqttMessage mqttMessage) throws Exception {
         JSONObject object = new JSONObject(mqttMessage.toString());
-        Chat chat = new Chat(object.get("username").toString(),object.get("text").toString(),object.getInt("sex"));
+        Log.i("Chat", mqttMessage.toString());
+        Chat chat = new Chat(object.get("username").toString(), object.get("text").toString(), object.getInt("sex"));
         chats.add(chat);
         chatViewAdapter.notifyDataSetChanged();
+        scrollMyListViewToBottom();
     }
 
     @Override
     public void deliveryComplete(IMqttDeliveryToken iMqttDeliveryToken) {
 
     }
-
 }

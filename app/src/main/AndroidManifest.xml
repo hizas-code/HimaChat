@@ -25,7 +25,7 @@
             android:label="@string/register_page" />
         <activity
             android:name="com.motion.lab.himachat.TermsActivity"
-            android:label="@string/terms_page"></activity>
+            android:label="@string/terms_page"/>
         <activity
             android:name="com.motion.lab.himachat.MainActivity"
             android:theme="@style/AppThemeNoAction">
@@ -38,7 +38,6 @@
         <activity
             android:name="com.motion.lab.himachat.GroupChat"
             android:theme="@style/AppThemeNoAction" />
-
+        <service android:name="org.eclipse.paho.android.service.MqttService" />
     </application>
-
 </manifest>

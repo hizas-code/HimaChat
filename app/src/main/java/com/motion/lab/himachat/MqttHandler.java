@@ -99,13 +99,15 @@ public class MqttHandler {
         }
     }
 
-    public void publish(String username, String messageText, int sex) {
+    public void publish(String username, String messageText, int sex, String date) {
         MqttMessage message = new MqttMessage();
-        String messagePayLoad = "{\"username\":\"" + username + "\",\"text\":\"" + messageText + "\",\"sex\":" + sex + "}";
+        message.setQos(1);
+        String messagePayLoad = "{\"username\":\"" + username + "\",\"text\":\"" + messageText + "\",\"sex\":" + sex + ",\"date\":\"" + date +"\"}";
 
         message.setPayload((messagePayLoad).getBytes());
         try {
-            client.publish(topic, message);
+            client.publish(topic, messagePayLoad.getBytes(),1 ,true);
+            //client.publish(topic, message);
         } catch (MqttException e) {
             e.printStackTrace();
             Toast.makeText(context, "Error, " + e.getMessage(), Toast.LENGTH_SHORT).show();

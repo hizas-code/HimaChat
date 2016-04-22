@@ -14,6 +14,7 @@ import android.widget.Toast;
 import org.eclipse.paho.client.mqttv3.IMqttDeliveryToken;
 import org.eclipse.paho.client.mqttv3.MqttCallback;
 import org.eclipse.paho.client.mqttv3.MqttMessage;
+import org.json.JSONException;
 import org.json.JSONObject;
 
 import java.util.ArrayList;
@@ -83,13 +84,13 @@ public class GroupChat extends AppCompatActivity implements View.OnClickListener
 //
 //                handler.publish(username,messageText,1);
 
-                handler.publish(username, messageText, 0);
 
                 Chat chat = new Chat(GroupChat.username, messageText, 0);
-                chats.add(chat);
+                handler.publish(username, messageText, 0, chat.getDate());
+//                chats.add(chat);
 
-                chatViewAdapter.notifyDataSetChanged();
-                scrollMyListViewToBottom();
+//                chatViewAdapter.notifyDataSetChanged();
+//                scrollMyListViewToBottom();
                 break;
 
             //tombol other user
@@ -124,13 +125,17 @@ public class GroupChat extends AppCompatActivity implements View.OnClickListener
     }
 
     @Override
-    public void messageArrived(String s, MqttMessage mqttMessage) throws Exception {
-        JSONObject object = new JSONObject(mqttMessage.toString());
-        Log.i("Chat", mqttMessage.toString());
-        Chat chat = new Chat(object.get("username").toString(), object.get("text").toString(), object.getInt("sex"));
-        chats.add(chat);
-        chatViewAdapter.notifyDataSetChanged();
-        scrollMyListViewToBottom();
+    public void messageArrived(String s, MqttMessage mqttMessage) {
+        try {
+            JSONObject object = new JSONObject(mqttMessage.toString());
+            Log.i("Chat", mqttMessage.toString());
+            Chat chat = new Chat(object.get("username").toString(), object.get("text").toString(), object.getInt("sex"));
+            chats.add(chat);
+            chatViewAdapter.notifyDataSetChanged();
+            scrollMyListViewToBottom();
+        }catch (JSONException e){
+            e.printStackTrace();
+        }
     }
 
     @Override

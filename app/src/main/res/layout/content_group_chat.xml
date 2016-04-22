@@ -30,7 +30,9 @@
         android:hint="text something..."
         android:layout_alignParentBottom="true"
         android:layout_alignParentLeft="true"
-        android:layout_alignParentStart="true" />
+        android:layout_alignParentStart="true"
+        android:layout_toLeftOf="@+id/button"
+        android:layout_toStartOf="@+id/button" />
 
     <Button
         android:layout_width="wrap_content"
@@ -40,4 +42,13 @@
         android:layout_below="@+id/listView"
         android:layout_alignRight="@+id/listView"
         android:layout_alignEnd="@+id/listView" />
+
+    <Button
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="sends"
+        android:id="@+id/butOtherUser"
+        android:layout_above="@+id/button"
+        android:layout_toRightOf="@+id/editText"
+        android:layout_toEndOf="@+id/editText" />
 </RelativeLayout>

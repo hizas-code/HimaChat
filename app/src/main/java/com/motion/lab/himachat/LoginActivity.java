@@ -52,7 +52,7 @@ public class LoginActivity extends AppCompatActivity implements View.OnClickList
                 switch (result){
                     // kalau respons sukses
                     case "success":
-                        Intent move = new Intent(LoginActivity.this, HomeActivity.class);
+                        Intent move = new Intent(LoginActivity.this, GroupChatActivity.class);
                         startActivity(move);
                         // status login disimpan
                         AppConfig.saveLogin(LoginActivity.this, NetHelper.SINGED_IN);
@@ -60,15 +60,13 @@ public class LoginActivity extends AppCompatActivity implements View.OnClickList
                         // finish, supaya kalau ditekan tombol back tidak kembali kehalaman login
                         finish();
                         break;
-                    // kalau respons username salah
-                    case "user":
-                        Toast.makeText(LoginActivity.this, "Your username is wrong", Toast.LENGTH_SHORT).show();
-                        break;
                     // kalau respons password salah
                     case "pass":
                         Toast.makeText(LoginActivity.this, "Your password is wrong", Toast.LENGTH_SHORT).show();
                         break;
-                    default: break;
+                    default:
+                        Toast.makeText(LoginActivity.this, "Your username is wrong", Toast.LENGTH_SHORT).show();
+                        break;
                 }
             }catch (UnsupportedEncodingException ex){
                 ex.printStackTrace();
@@ -78,12 +76,13 @@ public class LoginActivity extends AppCompatActivity implements View.OnClickList
         // dilakukan ketika login gagal ke server
         @Override
         public void onFailure(int statusCode, Header[] headers, byte[] responseBody, Throwable error) {
-            try {
-                String result = new String(responseBody, "UTF-8");
-                Log.i("Login", "onFailure: "+result);
-            }catch (UnsupportedEncodingException ex){
-                ex.printStackTrace();
-            }
+//            try {
+                // String result = new String(responseBody, "UTF-8");
+                Log.i("Login", "onFailure: "+statusCode);
+                Toast.makeText(LoginActivity.this, "Your username is wrong", Toast.LENGTH_SHORT).show();
+//            }catch (UnsupportedEncodingException ex){
+//                ex.printStackTrace();
+//            }
         }
     };
 

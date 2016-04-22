@@ -18,10 +18,12 @@ import java.util.List;
 public class ChatViewAdapter extends BaseAdapter {
     Context context;
     List<Chat> chats = new ArrayList<>();
+    String username;
 
-    public ChatViewAdapter(Context context, List<Chat> chats) {
+    public ChatViewAdapter(Context context, List<Chat> chats, String username) {
         this.context = context;
         this.chats = chats;
+        this.username = username;
     }
 
     @Override
@@ -88,7 +90,7 @@ public class ChatViewAdapter extends BaseAdapter {
 
     @Override
     public int getItemViewType(int position) {
-        return (chats.get(position).getUsername().equals(GroupChat.username)) ? 0 : 1;
+        return (chats.get(position).getUsername().equals(username)) ? 0 : 1;
     }
 
 }

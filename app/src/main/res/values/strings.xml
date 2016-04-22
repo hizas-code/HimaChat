@@ -6,7 +6,7 @@
     <string name="description">This menu contain all neuro knowledge</string>
 
     <!--address server-->
-    <string name="domain_url">http://10.5.13.155:3000/api</string>
+    <string name="domain_url">http://10.5.13.125:3000/api</string>
 
     <!--GUI-->
     <string name="register"><u>Register</u></string>

@@ -14,9 +14,6 @@
         android:label="@string/app_name"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name="com.motion.lab.himachat.HomeActivity">
-
-        </activity>
         <activity
             android:name="com.motion.lab.himachat.LoginActivity"
             android:theme="@style/AppThemeNoAction" />
@@ -31,13 +28,13 @@
             android:theme="@style/AppThemeNoAction">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
-
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
         <activity
-            android:name="com.motion.lab.himachat.GroupChat"
-            android:theme="@style/AppThemeNoAction" />
+            android:name=".GroupChatActivity"
+            android:theme="@style/AppTheme" />
+
         <service android:name="org.eclipse.paho.android.service.MqttService" />
     </application>
 </manifest>

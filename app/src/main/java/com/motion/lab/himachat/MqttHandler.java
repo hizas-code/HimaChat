@@ -40,7 +40,7 @@ public class MqttHandler {
 
     void setupMQTT(){
         String clientId = MqttClient.generateClientId();
-        client = new MqttAndroidClient(context, "tcp://192.168.0.26:1883", clientId);
+        client = new MqttAndroidClient(context, "tcp://10.5.13.125:1883", clientId);
         client.setCallback(callback);
     }
 

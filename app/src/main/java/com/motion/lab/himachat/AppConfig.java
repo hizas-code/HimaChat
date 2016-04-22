@@ -32,4 +32,8 @@ public class AppConfig {
         editor.putString(passKey, password);
         editor.apply();
     }
+
+    static String getLoggedUser(Context context){
+        return getPreference(context).getString(userKey, "");
+    }
 }

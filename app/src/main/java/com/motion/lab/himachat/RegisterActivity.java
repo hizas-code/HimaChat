@@ -4,6 +4,7 @@ import android.content.Intent;
 import android.support.design.widget.TextInputLayout;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.text.TextUtils;
 import android.view.View;
 import android.widget.CheckBox;
 import android.widget.EditText;
@@ -54,7 +55,7 @@ public class RegisterActivity extends AppCompatActivity implements View.OnClickL
             case R.id.register_button:
                 // cek input kosong atau tidak
                 if (eFullname!= null && !eFullname.getEditText().getText().toString().isEmpty()){
-                    if (eMail!= null && !eMail.getEditText().getText().toString().isEmpty()){
+                    if (eMail!= null && isValidEmail(eMail.getEditText().getText().toString())){
                         if (eUsername!= null && !eUsername.getEditText().getText().toString().isEmpty()){
                             if (ePassword!= null && !ePassword.getEditText().getText().toString().isEmpty()){
                                 if (cAccept!= null && cAccept.isChecked()){
@@ -83,6 +84,12 @@ public class RegisterActivity extends AppCompatActivity implements View.OnClickL
 
                 break;
         }
+    }
+
+    boolean isValidEmail(String email){
+        if (!TextUtils.isEmpty(email) && email.contains("@")){
+            return true;
+        }return false;
     }
 
     AsyncHttpResponseHandler httpResponseHandler = new AsyncHttpResponseHandler() {
